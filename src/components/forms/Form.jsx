@@ -1,26 +1,35 @@
 export default function Form() {
   return (
     <div className="container mx-auto p-6 rounded-lg bg-slate-200 dark:bg-slate-600 lg:w-1/6 sm:w-1/2 md:w-1/2">
-      <form className="">
+      <form>
         <div className="mb-6">
           <label
             htmlFor="email"
-            className="block mb-2 text-sm font-medium text-gray-900 dark:text-white	"
+            className="after:content-['*'] after:ml-0.5 after:text-red-500 block mb-2 text-sm font-medium text-gray-900 dark:text-white	"
           >
             Your email
           </label>
           <input
             type="email"
             id="email"
-            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500  disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none
+            
+            focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1
+
+            peer:invalid:border-pink-500 peer:invalid:text-pink-600
+            peer:focus:invalid:border-pink-500 peer:focus:invalid:ring-pink-500
+            "
             placeholder="name@email.com"
             required
           />
+          <p class="mt-2 invisible hidden peer-invalid:visible text-pink-600 text-sm">
+            Please provide a valid email address.
+          </p>
         </div>
         <div className="mb-6">
           <label
             htmlFor="password"
-            className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+            className="after:content-['*'] after:ml-0.5 after:text-red-500 block mb-2 text-sm font-medium text-gray-900 dark:text-white"
           >
             Your password
           </label>
@@ -28,7 +37,9 @@ export default function Form() {
             type="password"
             id="password"
             placeholder="password"
-            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg  block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500
+            focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1
+            "
             required
           />
         </div>
