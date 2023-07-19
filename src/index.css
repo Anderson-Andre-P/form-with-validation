@@ -3,6 +3,11 @@
 @tailwind utilities;
 
 @layer base {
+  * {
+    font-smooth: antialiased;
+    -webkit-font-smoothing: antialiased;
+  }
+
   body {
     @apply bg-white dark:bg-gray-800;
   }

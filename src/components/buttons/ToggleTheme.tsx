@@ -1,9 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-export default function ToggleTheme(props) {
-  // var themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
-  // var themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
-
+export default function ToggleTheme() {
   const [theme, setTheme] = useState('light');
 
   useEffect(() => {
@@ -16,9 +13,6 @@ export default function ToggleTheme(props) {
 
   const handleThemeSwitch = () => {
     setTheme(theme === 'dark' ? 'light' : 'dark');
-
-    // themeToggleDarkIcon.classList.toggle('hidden');
-    // themeToggleLightIcon.classList.toggle('hidden');
   };
 
   return (
@@ -29,11 +23,10 @@ export default function ToggleTheme(props) {
         className="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 "
         onClick={handleThemeSwitch}
       >
-        Trocar o tema
         {theme === 'light' ? (
           <svg
             id="theme-toggle-dark-icon"
-            className="hidden w-5 h-5"
+            className="block dark:hidden w-5 h-5"
             fill="currentColor"
             viewBox="0 0 20 20"
             xmlns="http://www.w3.org/2000/svg"
@@ -43,7 +36,7 @@ export default function ToggleTheme(props) {
         ) : (
           <svg
             id="theme-toggle-light-icon"
-            className="hidden w-5 h-5"
+            className="dark:block hidden w-5 h-5"
             fill="currentColor"
             viewBox="0 0 20 20"
             xmlns="http://www.w3.org/2000/svg"
